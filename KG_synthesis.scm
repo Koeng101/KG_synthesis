@@ -1,0 +1,2 @@
+(require-extension lookup-table)
+

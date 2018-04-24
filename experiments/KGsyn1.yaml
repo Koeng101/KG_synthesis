@@ -1,28 +1,43 @@
-# RE DNA SYN
+# KGDNASYN
 id: 1
 date: 24-APR-2018
 description: The first experiment to prove a new method of gene synthesis using restriction enzymes. 
 
-# Variables in this experiment
-
+# Conditions for experiment
 supplies:
         # In units enzyme, as defined by NEB
         - SapI: 200
+        - BbsI: 250
         - T4 ligase: 16000
 
 assemblies:
-        - Control
-        - 
+        - Negative control
+        - Positive control
+        - GCC/CAG control 
+        - 8 assemblies
 
 variables: 
 - DNA concentration in assembly:
-        # Concentration of DNA in SapI assembly reaction
+        # Concentration of DNA in SapI assembly reaction, fmol
         - 10
         - 20
         - 40
         - 60
         - 100
 - Enzyme concentration:
+        # SapI concentration in reaction in units
+        - 0
+        - .1
+        - .25
+        - .5
+        - 1
+# In total, 325 conditions.
 
-- DNA annealing conditions
-- DNA assembly conditions
+protocols:
+        resuspension of primers:
+                - Add 100uL of H2O to primer stocks
+                - This creates 10pmol/uL stock solution
+        annealing primers: 
+                - Add 10uL primer stock (for and rev), 10uL Custmart, 70uL H2O
+                - This creates a 1pmol/uL solution
+

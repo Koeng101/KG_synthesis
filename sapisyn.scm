@@ -4,6 +4,7 @@
 ; Take first three letters, search list if those 3 letters exist in string. If they do not, remove first 2 letters from string and do the procedure again. 
 
 (require-extension s)
+(require-extension srfi-13)
 
 (define (sapi-buildable DNA previous-bases)
   (cond
@@ -22,7 +23,6 @@
 (define (sapi-search DNA)
    (for-each (lambda (DNA-fragments) (print (sapi-buildable DNA-fragments '()))) (DNA-chomp DNA '())))
 
-(require-extension srfi-13)
 (define (reverse-complement DNA_sequence) (s-reverse (string-map (lambda (x) (list-ref (assq x '((#\A #\T) (#\T #\A) (#\G #\C) (#\C #\G))) 1)) DNA_sequence)))
 
 
@@ -35,3 +35,5 @@
                                                                                                              
                                                                                                              ))))))
   )
+
+
