@@ -1,0 +1,28 @@
+# RE DNA SYN
+id: 1
+date: 24-APR-2018
+description: The first experiment to prove a new method of gene synthesis using restriction enzymes. 
+
+# Variables in this experiment
+
+supplies:
+        # In units enzyme, as defined by NEB
+        - SapI: 200
+        - T4 ligase: 16000
+
+assemblies:
+        - Control
+        - 
+
+variables: 
+- DNA concentration in assembly:
+        # Concentration of DNA in SapI assembly reaction
+        - 10
+        - 20
+        - 40
+        - 60
+        - 100
+- Enzyme concentration:
+
+- DNA annealing conditions
+- DNA assembly conditions
