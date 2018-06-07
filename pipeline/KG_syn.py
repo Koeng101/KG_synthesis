@@ -22,3 +22,20 @@ def oligo_to_block(oligo_seq):
     else:
         block = "NOT_BLOCK"
     return block
+
+def sequence_to_block(seq):
+    seq = "GCC" + seq + "CAG"
+    def next_base(seq, block_list):
+        if len(seq[0:5]) < 5:
+            return block_list
+        block_list.append(seq[0:5])
+        return next_base(seq[3:], block_list)
+    return next_base(seq, [])
+
+def find_repeat_overlap(overlap_list):
+    repeats = []
+    for overlap,repeat in dict(Counter(overlap_list)).items():
+        if repeat > 1:
+            repeats.append(overlap)
+    return repeats
+find_repeat_overlap(sequence_to_block(string))

@@ -57,9 +57,18 @@ protocols_first_pass:
                 master_mix: #5ul per reaction
                         - 16uL Cutsmart
                         - 16uL ATP
-                        - 8uL T4 ligase
-                        - 8uL SapI
+                        -  8uL T4 ligase
+                        -  8uL SapI
                         - 32uL H2O
                 reactions: 
                         - Setup information on pandas data
+        assemblies:
+                master_mix: #10uL per reaction
+                        - 16uL Cutsmart
+                        - 16uL ATP
+                        -  8uL T4 ligase
+                        -  8uL BbsI
+                        -  4uL 100ng/uL vector
+                        - 108uL H2O
+                - add 10uL to each reaction, do another GoldenGate reaction.
 
